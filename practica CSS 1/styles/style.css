@@ -1,0 +1,134 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1 rem = 16px. ESTO NO SE CAMBIA */ 
+/*  font-family: "Satisfy", cursive; */ 
+
+/* FUENTES Y VARIABLES GLOBALES */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap');
+
+/* ESTILOS BASE Y CUERPO (BODY) */
+
+body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        background-color: #4096ba;
+        color: #f8fafc;
+     }
+
+/* ENCABEZADO Y NAVEGACIÓN (HEADER, NAV Y FOOTER) */  /* ACA SE APLICO layout flexible */ 
+
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #306f8a;
+        padding: 1rem 2rem;
+       }
+
+/* SE AJUSTO LA IMG DEL LOGO */
+.logo-img {
+    width: 80px;    
+    height: auto;
+}
+
+/* Lista de enlaces en fila horizontal */
+.nav-ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-ul li a {
+                color: #faee00;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 300;
+             }
+
+.nav-ul li {
+            list-style: none;
+           }
+
+           /* ACA SE APLICO flexible al footer */
+footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            background-color: #306f8a;
+}           
+
+.pie-de-pagina {
+                color: #faee00;
+                font-size: 1rem;
+                font-weight: 300;
+               }
+
+/* ACA SE APLICO paddin PARA LOS ESPACIOS */
+main {
+    padding: 2rem 1.5rem;
+}
+
+/* CONTENIDO PRINCIPAL Y TIPOGRAFÍA */
+
+/* se agrego un margin-bottom */
+
+section {
+          background-color: #34425533;
+          padding: 1rem;
+          margin-bottom: 2rem;
+        }
+
+h1 {
+    color: #0c0068;
+    font-size: 2.7rem;
+    font-weight: 700;
+    text-align: center;
+   }
+
+h2 {
+    color: #1e293b;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+   }
+
+
+h3 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+   }
+
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff1e0;
+  }
+
+.img-index {
+    width: 70%;
+    height: auto;
+}
+
+/* ACA EN ESTO DEBO MIRAR EL RESTO DE LOS ARCHIVOS PARA VER SI LE AGREGO FLEXBOX CON DIV O SOLAMENTE CLASS */ 
+
+/* se realiza cambios para practicar y colocar un flexbox con un div ya que es el contenedor padre*/ 
+/*ESTO ES EN EL ARCHIVO INICIO Y SOBRE NOSOTROS*/
+.servicios-lista {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 1.5rem;
+}
+
+
+
+
+
