@@ -18,6 +18,14 @@ body {
         line-height: 1.6;
         background-color: #4096ba;
         color: #f8fafc;
+        /* Layout Mobile-First con CSS Grid */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+            gap: 1.5rem;
      }
 
 /* ENCABEZADO Y NAVEGACIÓN (HEADER, NAV Y FOOTER) */  /* ACA SE APLICO layout flexible */ 
@@ -28,6 +36,7 @@ header {
         align-items: center;
         background-color: #306f8a;
         padding: 1rem 2rem;
+        grid-area: header; /* ACA SE APLICO grid-area para trabajar con el modulo 4 */ 
        }
 
 /* SE AJUSTO LA IMG DEL LOGO */
@@ -60,6 +69,7 @@ footer {
             align-items: center;
             padding: 2rem 1.5rem;
             background-color: #306f8a;
+            grid-area: footer;
 }           
 
 .pie-de-pagina {
@@ -71,6 +81,7 @@ footer {
 /* ACA SE APLICO paddin PARA LOS ESPACIOS */
 main {
     padding: 2rem 1.5rem;
+    grid-area: main;
 }
 
 /* CONTENIDO PRINCIPAL Y TIPOGRAFÍA */
@@ -79,9 +90,14 @@ main {
 
 section {
           background-color: #34425533;
-          padding: 1rem;
+          padding: 1.25rem;
           margin-bottom: 2rem;
         }
+
+ /* Espaciado interno uniforme en los 4 lados para que tenga mas aire */        
+article {
+    padding: 1.2rem;
+}
 
 h1 {
     color: #0c0068;
@@ -112,23 +128,77 @@ p {
     color: #fff1e0;
   }
 
+  /* esta imagen es del index, con su tamaño respectivo */
 .img-index {
-    width: 70%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto; 
+    border-radius: 8px;
 }
 
-/* ACA EN ESTO DEBO MIRAR EL RESTO DE LOS ARCHIVOS PARA VER SI LE AGREGO FLEXBOX CON DIV O SOLAMENTE CLASS */ 
+/* ESTO ES EN EL FIGURE DEL INDEX: Centra el contenedor y el texto de la bienvenida */
+.banner-principal {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
 
-/* se realiza cambios para practicar y colocar un flexbox con un div ya que es el contenedor padre*/ 
+/* estas imagen es del archivo galeria */
+.galeria-felina {
+    width: 100%;
+    height: auto; /* En mobile y tablet se ven completas */
+    /*object-fit: cover; Evita que las imágenes se deformen */
+    display: block;
+    border-radius: 4px;
+}
+
+
 /*ESTO ES EN EL ARCHIVO INICIO Y SOBRE NOSOTROS*/
+/* Lista de servicios apilada en mobile */
 .servicios-lista {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    flex-direction: column; /* Mobile: uno debajo del otro */
     gap: 1.5rem;
 }
 
+/* Grilla de galería en 1 sola columna en mobile */
+/* Agregalo en la parte de estilos base */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 
+/* ESCRITORIO (MEDIA QUERY - DESKTOPS / PANTALLAS GRANDES) */
+@media (min-width: 1024px) {
+    body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    gap: 2.5rem;
+  }
+  
+/* La galería pasa a 3 columnas */
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 
+/* En escritorio todas las fotos toman la misma altura uniforme */  
+  .galeria-felina {
+    height: 400px;
+    object-fit: cover;
+  }
 
-
+    /* Los servicios pasan a fila horizontal */
+  .servicios-lista {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+}
