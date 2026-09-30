@@ -69,7 +69,7 @@ footer {
             align-items: center;
             padding: 2rem 1.5rem;
             background-color: #306f8a;
-            grid-area: footer;
+            grid-area: footer; /* ACA SE APLICO grid-area para trabajar con el modulo 4 */ 
 }           
 
 .pie-de-pagina {
@@ -85,8 +85,6 @@ main {
 }
 
 /* CONTENIDO PRINCIPAL Y TIPOGRAFÍA */
-
-/* se agrego un margin-bottom */
 
 section {
           background-color: #34425533;
@@ -149,11 +147,9 @@ p {
 .galeria-felina {
     width: 100%;
     height: auto; /* En mobile y tablet se ven completas */
-    /*object-fit: cover; Evita que las imágenes se deformen */
     display: block;
     border-radius: 4px;
 }
-
 
 /*ESTO ES EN EL ARCHIVO INICIO Y SOBRE NOSOTROS*/
 /* Lista de servicios apilada en mobile */
